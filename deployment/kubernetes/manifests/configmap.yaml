@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: userservice-config
+  namespace: production
+data:
+  database.url: "jdbc:postgresql://postgres-service:5432/userdb"
+  jwt.access.expiration: "900"
+  jwt.refresh.expiration: "604800"
+  cors.allowed.origins: "https://yourdomain.com,https://app.yourdomain.com"
+

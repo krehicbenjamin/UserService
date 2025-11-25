@@ -1,0 +1,15 @@
+apiVersion: v2
+name: userservice
+description: Enterprise User Service with Authentication
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - authentication
+  - user-management
+  - jwt
+  - spring-boot
+maintainers:
+  - name: Platform Team
+    email: platform@example.com
+
