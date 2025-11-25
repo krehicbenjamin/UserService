@@ -24,10 +24,10 @@ jobs:
         cache: maven
     
     - name: Run tests
-      run: ./mvnw clean test
+      run: mvn clean test
     
     - name: Generate test coverage
-      run: ./mvnw jacoco:report
+      run: mvn jacoco:report
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
@@ -47,7 +47,7 @@ jobs:
         cache: maven
     
     - name: OWASP Dependency Check
-      run: ./mvnw dependency-check:check
+      run: mvn dependency-check:check
     
     - name: Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
@@ -79,7 +79,7 @@ jobs:
         cache: maven
     
     - name: Build with Maven
-      run: ./mvnw clean package -DskipTests -Ddependency-check.skip=true
+      run: mvn clean package -DskipTests -Ddependency-check.skip=true
     
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
