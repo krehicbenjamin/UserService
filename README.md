@@ -109,8 +109,8 @@ docker run -d --name postgres \
   postgres:16-alpine
 
 # Build and run
-./mvnw clean install
-./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+mvn clean install
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 ## Documentation
@@ -184,12 +184,12 @@ curl http://localhost:8080/users/me \
 
 ### Run Tests
 ```bash
-./mvnw test
+mvn test
 ```
 
 ### Security Scan
 ```bash
-./mvnw dependency-check:check
+mvn dependency-check:check
 ```
 
 ## Database Schema

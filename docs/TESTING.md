@@ -89,25 +89,25 @@ src/test/
 ### Run All Tests
 
 ```bash
-./mvnw test
+mvn test
 ```
 
 ### Run Specific Test Class
 
 ```bash
-./mvnw test -Dtest=AuthServiceTest
+mvn test -Dtest=AuthServiceTest
 ```
 
 ### Run Specific Test Method
 
 ```bash
-./mvnw test -Dtest=AuthServiceTest#shouldRegisterNewUser
+mvn test -Dtest=AuthServiceTest#shouldRegisterNewUser
 ```
 
 ### Run Tests with Coverage
 
 ```bash
-./mvnw test jacoco:report
+mvn test jacoco:report
 ```
 
 Coverage report: `target/site/jacoco/index.html`
@@ -115,13 +115,13 @@ Coverage report: `target/site/jacoco/index.html`
 ### Run Only Unit Tests
 
 ```bash
-./mvnw test -Dgroups=unit
+mvn test -Dgroups=unit
 ```
 
 ### Run Only Integration Tests
 
 ```bash
-./mvnw test -Dgroups=integration
+mvn test -Dgroups=integration
 ```
 
 ### Run Tests in IDE
@@ -241,7 +241,7 @@ assertThat(sessions)
 ### Viewing Coverage
 
 ```bash
-./mvnw test jacoco:report
+mvn test jacoco:report
 open target/site/jacoco/index.html
 ```
 
@@ -260,10 +260,10 @@ Tests run automatically in CI/CD pipeline:
 ```yaml
 # .github/workflows/ci-cd.yaml
 - name: Run tests
-  run: ./mvnw test
+  run: mvn test
 
 - name: Generate coverage report
-  run: ./mvnw jacoco:report
+  run: mvn jacoco:report
 ```
 
 ## Best Practices
@@ -354,7 +354,7 @@ emailService.sendEmail(...); // Hits real SMTP server
 ### Tests Fail Locally But Pass in CI
 
 - Check Java version (should be Java 21)
-- Clear Maven cache: `./mvnw clean`
+- Clear Maven cache: `mvn clean`
 - Check timezone differences
 - Verify test database state
 

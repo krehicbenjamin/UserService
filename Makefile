@@ -11,14 +11,14 @@ help:
 	@echo "  make clean              - Clean build artifacts"
 
 build:
-	./mvnw clean package -DskipTests -Ddependency-check.skip=true
+	mvn clean package -DskipTests -Ddependency-check.skip=true
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
 test:
-	./mvnw clean verify
+	mvn clean verify
 
 security-scan:
-	./mvnw dependency-check:check
+	mvn dependency-check:check
 	trivy image $(IMAGE_NAME):$(IMAGE_TAG)
 
 deploy-staging:
@@ -49,7 +49,7 @@ rollback:
 	kubectl rollout undo deployment/userservice -n production
 
 clean:
-	./mvnw clean
+	mvn clean
 	docker rmi $(IMAGE_NAME):$(IMAGE_TAG) || true
 
 logs:

@@ -68,7 +68,7 @@ This guide covers all deployment methods for the UserService application.
 
 3. Run application:
    ```bash
-   ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+   mvn spring-boot:run -Dspring-boot.run.profiles=dev
    ```
 
 ## Kubernetes Deployment
